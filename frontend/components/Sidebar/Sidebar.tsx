@@ -3,9 +3,9 @@ import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
-import Box from './Box';
-import SidebarItem from "./SidebarItem";
-import Library from "./Library";
+import Box from '../Box/Box';
+import SidebarItem from "../SidebarItem/SidebarItem";
+import Library from "../Library/Library";
 
 interface SidebarProps {
   children: React.ReactNode;
