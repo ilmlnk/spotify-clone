@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 
-import useLoadImage from "@/hooks/useLoadImage";
+import useLoadImage from "@/hooks/useLoadImage/useLoadImage";
 import { Song } from "@/types";
 
 import PlayButton from "../PlayButton/PlayButton";
 
 import React, { FC } from "react";
-import { Play } from "next/font/google";
 
 interface SongItemProps {
   data: Song;

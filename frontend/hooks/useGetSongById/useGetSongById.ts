@@ -42,3 +42,5 @@ const useSongById = (id?: string) => {
     [isLoading, song]
   );
 };
+
+export default useSongById;
