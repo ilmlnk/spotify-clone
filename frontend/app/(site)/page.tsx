@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <div
-      className="w-full h-full overflow-hidden overflow-y-auto rounded-lg bg-neutral-900"
+      className="w-full h-full overflow-hidden overflow-y-auto rounded-lg  bg-neutral-900"
     >
       <Header>
         <div className="mb-2">
@@ -20,7 +20,7 @@ export default async function Home() {
               Welcome back
           </h1>
           <div 
-            className="grid grid-cols-1 gap-3 mt-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+            className="grid grid-cols-1 gap-3 mt-4  sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
           >
             <ListItem 
               name="Liked Songs" 
