@@ -4,7 +4,7 @@ import { useSessionContext } from "@supabase/auth-helpers-react";
 
 import { Song } from "@/types";
 
-const useSongById = (id?: string) => {
+const useGetSongById = (id?: string) => {
   const [isLoading, setIsLoading] = useState(false);
   const [song, setSong] = useState<Song | undefined>(undefined);
   const { supabaseClient } = useSessionContext();
@@ -43,4 +43,4 @@ const useSongById = (id?: string) => {
   );
 };
 
-export default useSongById;
+export default useGetSongById;

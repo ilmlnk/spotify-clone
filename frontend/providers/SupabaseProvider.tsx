@@ -11,7 +11,7 @@ interface SupabaseProviderProps {
   children: React.ReactNode;
 }
 
-export const SupabaseProvider: FC<SupabaseProviderProps> = ({ children }) => {
+const SupabaseProvider: FC<SupabaseProviderProps> = ({ children }) => {
   const [supabaseClient] = useState(() =>
     createClientComponentClient<Database>()
   );
@@ -21,3 +21,5 @@ export const SupabaseProvider: FC<SupabaseProviderProps> = ({ children }) => {
     </SessionContextProvider>
   );
 };
+
+export default SupabaseProvider;
