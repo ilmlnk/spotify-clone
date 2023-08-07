@@ -1,4 +1,4 @@
-/*import { useEffect, useState, createContext, useContext } from 'react';
+import { useEffect, useState, createContext, useContext } from 'react';
 import {
   useUser as useSupaUser,
   useSessionContext,
@@ -83,4 +83,4 @@ export const useUser = () => {
     throw new Error(`useUser must be used within a MyUserContextProvider.`);
   }
   return context;
-};*/
+};
