@@ -6,7 +6,12 @@ import { twMerge } from "tailwind-merge";
 import { RxCaretLeft, RxCaretRight } from "react-icons/rx";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
-import Button from "./Button";
+import Button from "../Button/Button";
+import usePlayer from "@/hooks/usePlayer/usePlayer";
+import useAuthModal from "@/hooks/useAuthModal/useAuthModal";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { useUser } from "@/hooks/useUser/useUser";
+import { toast } from "react-hot-toast";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -15,9 +20,20 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const router = useRouter();
+  const player = usePlayer();
+  const authModal = useAuthModal();
 
-  const handleLogout = () => {
-    // handle logout in the future
+  const supabaseClient = useSupabaseClient();
+  const { user } = useUser();
+
+  const handleLogout = async () => {
+    const { error } = await supabaseClient.auth.signOut();
+    player.reset();
+    router.refresh();
+
+    if (error) {
+      toast.error(error.message);
+    }
   };
   return (
     <div

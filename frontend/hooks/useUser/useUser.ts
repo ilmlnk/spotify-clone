@@ -31,7 +31,7 @@ export const MyUserContextProvider = (props: Props) => {
   } = useSessionContext();
   const user = useSupaUser();
   const accessToken = session?.access_token ?? null;
-  const [isLoadingData, setIsloadingData] = useState(false);
+  const [isLoadingData, setIsLoadingData] = useState(false);
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [subscription, setSubscription] = useState<Subscription | null>(null);
 
@@ -45,7 +45,7 @@ export const MyUserContextProvider = (props: Props) => {
 
   useEffect(() => {
     if (user && !isLoadingData && !userDetails && !subscription) {
-      setIsloadingData(true);
+      setIsLoadingData(true);
       Promise.allSettled([getUserDetails(), getSubscription()]).then(
         (results) => {
           const userDetailsPromise = results[0];
@@ -57,7 +57,7 @@ export const MyUserContextProvider = (props: Props) => {
           if (subscriptionPromise.status === 'fulfilled')
             setSubscription(subscriptionPromise.value.data as Subscription);
 
-          setIsloadingData(false);
+          setIsLoadingData(false);
         }
       );
     } else if (!user && !isLoadingUser && !isLoadingData) {
@@ -74,7 +74,7 @@ export const MyUserContextProvider = (props: Props) => {
     subscription
   };
 
-  return <UserContext.Provider value={value} {...props} />;
+  // return <UserContext.Provider value={value} {...props} />;
 };
 
 export const useUser = () => {
