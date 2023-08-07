@@ -70,12 +70,12 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         <div className="flex items-center justify-between gap-x-4">
           <div>
             <Button
-            onClick={() => {}}
+            onClick={authModal.onOpen}
             className='font-medium bg-transparent text-neutral-300'>Sign Up</Button>
           </div>
           <div>
             <Button 
-            onClick={() => {}}
+            onClick={authModal.onOpen}
             className='px-6 py-2 bg-white'>Log In</Button>
           </div>
         </div>
